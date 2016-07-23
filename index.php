@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="alternate" hreflang="ua" href="https://housemassage.herokuapp.com" />
 	<meta name="google-site-verification" content="rds7nH1lw7307eRCsNZdzg7gwhI64RTL-QPhx9ieDKg" />
 	<meta charset="UTF-8">
 	<title>Document</title>
