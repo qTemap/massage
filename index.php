@@ -3,11 +3,30 @@
 <head>
 	<link rel="alternate" hreflang="ua" href="https://housemassage.herokuapp.com" />
 	<meta name="google-site-verification" content="rds7nH1lw7307eRCsNZdzg7gwhI64RTL-QPhx9ieDKg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="style_massage.css">
 	<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
 </head>
+<script>
+	$.ajax({
+			type: "POST",
+			url: "server.php",
+			data: {fun: "type"},
+			success: function(fun) {
+				if(fun == "Mobile") {
+					$('link[rel=stylesheet]').remove();
+				    var link = document.createElement("link");
+				    link.setAttribute("rel", "stylesheet");
+				    link.setAttribute("type", "text/css");
+				    link.setAttribute("href", "mobile.css");
+				    document.getElementsByTagName("head")[0].appendChild(link);
+				} 
+			}
+		});
+			
+	</script>
 <body>
 	<div class="header">
 		<div class="menu">
