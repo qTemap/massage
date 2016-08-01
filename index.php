@@ -48,14 +48,23 @@
 </html>
 
 <?php 
-	require_once('database.php');
+	// require_once('database.php');
 
-	$result = DB :: $dbh->queryFetch('SELECT * FROM `massage` ');
+	// $result = DB :: $dbh->queryFetch('SELECT * FROM `massage` ');
 
-	while($row = $result->fetch()) {
-		echo $row['id'];
-		echo $row['name'];
-	}
+	// while($row = $result->fetch()) {
+	// 	echo $row['id'];
+	// 	echo $row['name'];
+	// }
+
+$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
+echo $url;
+	// $dbas = substr( $url["path"], 1);
+ //    define ('DBHOST', $url["host"]); 
+ //    define ('DBPORT', '3306'); 
+ //    define ('DBNAME', $dbas); // Имя базы
+ //    define ('DBUSER', $url["user"]); // Пользователь
+ //    define ('DBPASS', $url["pass"]); // Пароль
 
 	echo "Привет";
 ?>
