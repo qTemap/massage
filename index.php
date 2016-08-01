@@ -10,22 +10,22 @@
 	<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
 </head>
 <script>
-	$.ajax({
-			type: "POST",
-			url: "server.php",
-			data: {fun: "type"},
-			success: function(fun) {
-				if(fun == "Mobile") {
-					alert(fun);
-					$('link[rel=stylesheet]').remove();
-				    var link = document.createElement("link");
-				    link.setAttribute("rel", "stylesheet");
-				    link.setAttribute("type", "text/css");
-				    link.setAttribute("href", "mobile.css");
-				    document.getElementsByTagName("head")[0].appendChild(link);
-				} 
-			}
-		});
+	// $.ajax({
+	// 		type: "POST",
+	// 		url: "server.php",
+	// 		data: {fun: "type"},
+	// 		success: function(fun) {
+	// 			if(fun == "Mobile") {
+	// 				alert(fun);
+	// 				$('link[rel=stylesheet]').remove();
+	// 			    var link = document.createElement("link");
+	// 			    link.setAttribute("rel", "stylesheet");
+	// 			    link.setAttribute("type", "text/css");
+	// 			    link.setAttribute("href", "mobile.css");
+	// 			    document.getElementsByTagName("head")[0].appendChild(link);
+	// 			} 
+	// 		}
+	// 	});
 			
 	</script>
 <body>
@@ -62,9 +62,9 @@ $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 
 
-	$result = mysql_query('SELECT * FROM `massage` ');
+	$result = mysql_query('select * from `massage` ',$conn);
 
-	while($row = mysql_fetch_array($result)) {
+	while($row = mysql_fetch_assoc($result)) {
 		echo $row[0];
 		echo $row[1];
 	}
