@@ -58,7 +58,12 @@
 	// }
 
 $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
-echo $url;
+
+
+    echo $url["host"]."<br>";
+    echo $url["user"]."<br>";
+    echo $url["pass"]."<br>";
+    echo substr($url["path"],1)."<br>";
 	// $dbas = substr( $url["path"], 1);
  //    define ('DBHOST', $url["host"]); 
  //    define ('DBPORT', '3306'); 
@@ -66,5 +71,4 @@ echo $url;
  //    define ('DBUSER', $url["user"]); // Пользователь
  //    define ('DBPASS', $url["pass"]); // Пароль
 
-	echo "Привет";
 ?>
