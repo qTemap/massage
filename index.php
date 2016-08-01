@@ -48,27 +48,25 @@
 </html>
 
 <?php 
-	// require_once('database.php');
-
-	// $result = DB :: $dbh->queryFetch('SELECT * FROM `massage` ');
-
-	// while($row = $result->fetch()) {
-	// 	echo $row['id'];
-	// 	echo $row['name'];
-	// }
 
 $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
 
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"],1);
+ mysqli_connect($server, $username, $password);
 
-    echo $url["host"]."<br>";
-    echo $url["user"]."<br>";
-    echo $url["pass"]."<br>";
-    echo substr($url["path"],1)."<br>";
-	// $dbas = substr( $url["path"], 1);
- //    define ('DBHOST', $url["host"]); 
- //    define ('DBPORT', '3306'); 
- //    define ('DBNAME', $dbas); // Имя базы
- //    define ('DBUSER', $url["user"]); // Пользователь
- //    define ('DBPASS', $url["pass"]); // Пароль
+
+    mysqli_select_db($db);
+
+
+
+	$result = query('SELECT * FROM `massage` ');
+
+	while($row = $result->fetch()) {
+		echo $row['id'];
+		echo $row['name'];
+	}
 
 ?>
