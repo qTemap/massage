@@ -47,8 +47,15 @@
 	</script>
 </html>
 
-
 <?php 
+	require_once('database.php');
 
+	$result = DB :: $dbh->queryFetch('SELECT * FROM `massage` ');
 
-echo "sdflgnjdfkj" ?>
+	while($row = $result->fetch()) {
+		echo $row['id'];
+		echo $row['name'];
+	}
+
+	echo "Привет";
+?>
