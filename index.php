@@ -38,7 +38,12 @@
 				<?php 
 					require_once('/database.php');
 
-					
+					$result = DB :: $dbh->queryFetch('SELECT * FROM `massage` ');
+
+					while($row = $result->fetch()) {
+						echo $row['id'];
+						echo $row['name'];
+					}
 				?>
 			</ul>
 		</div>
