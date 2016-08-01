@@ -65,8 +65,8 @@ $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
 	$result = mysql_query('SELECT * FROM `massage` ');
 
 	while($row = mysql_fetch_array($result)) {
-		echo $row['id'];
-		echo $row['name'];
+		echo $row[0];
+		echo $row[1];
 	}
 
 ?>
