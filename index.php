@@ -55,16 +55,16 @@ $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
     $username = $url["user"];
     $password = $url["pass"];
     $db = substr($url["path"],1);
- mysqli_connect($server, $username, $password);
+ 	$conn = mysqli_connect($server, $username, $password);
 
 
-    mysqli_select_db($db);
+    mysqli_select_db($db,$conn);
 
 
 
-	$result = query('SELECT * FROM `massage` ');
+	$result = mysql_query('SELECT * FROM `massage` ');
 
-	while($row = $result->fetch()) {
+	while($row = mysql_fetch_array($result)) {
 		echo $row['id'];
 		echo $row['name'];
 	}
