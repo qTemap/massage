@@ -44,6 +44,8 @@
 						echo $row['id'];
 						echo $row['name'];
 					}
+
+					echo "Привет";
 				?>
 			</ul>
 		</div>

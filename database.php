@@ -7,7 +7,7 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 	$dbas = substr( $url["path"], 1);
     define ('DBHOST', $url["host"]); 
     define ('DBPORT', '3306'); 
-    define ('DBNAME', "fsdf"); // Имя базы
+    define ('DBNAME', $dbas); // Имя базы
     define ('DBUSER', $url["user"]); // Пользователь
     define ('DBPASS', $url["pass"]); // Пароль
 	
