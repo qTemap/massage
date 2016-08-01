@@ -34,7 +34,7 @@
 			<ul>
 				<a href="type_massage.php"><li>Виды массажа</li></a>
 				<a href="price.php"><li>Цены</li></a>
-				<a href="contacts.php"><li>Контакты</li></a>
+				<a href="contacts.php"><li>Кон</li></a>
 				<?php 
 					require_once('/database.php');
 
