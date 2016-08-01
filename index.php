@@ -62,11 +62,10 @@ $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 
 
-	$result = mysql_query('select * from SELECT * FROM heroku_a4a500673f4ced6.admin ',$conn);
+	$result = mysql_query('select * from SELECT * FROM heroku_a4a500673f4ced6.massage ');
 
 	while($row = mysql_fetch_assoc($result)) {
-		echo $row[0];
-		echo $row['login'];
+		echo $row['name'];
 	}
 
 ?>
