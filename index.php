@@ -16,6 +16,7 @@
 			data: {fun: "type"},
 			success: function(fun) {
 				if(fun == "Mobile") {
+					alert(fun);
 					$('link[rel=stylesheet]').remove();
 				    var link = document.createElement("link");
 				    link.setAttribute("rel", "stylesheet");
