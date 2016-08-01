@@ -35,6 +35,18 @@
 				<a href="type_massage.php"><li>Виды массажа</li></a>
 				<a href="price.php"><li>Цены</li></a>
 				<a href="contacts.php"><li>Контакты</li></a>
+				<?php 
+					require_once('/database.php');
+
+					$result = DB :: $dbh->queryFetch('SELECT * FROM `massage` ');
+
+					$i = 0;
+					while($row = $result->fetch()) {
+						echo $newsList[$i]['id'] = $row['id'];
+						echo $newsList[$i]['name'] = $row['name'];
+						$i++;
+					}
+				?>
 			</ul>
 		</div>
 	</div>
