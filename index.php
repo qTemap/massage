@@ -35,18 +35,7 @@
 				<a href="type_massage.php"><li>Виды массажа</li></a>
 				<a href="price.php"><li>Цены</li></a>
 				<a href="contacts.php"><li>Кон</li></a>
-				<?php 
-					require_once('/database.php');
-
-					$result = DB :: $dbh->queryFetch('SELECT * FROM `massage` ');
-
-					while($row = $result->fetch()) {
-						echo $row['id'];
-						echo $row['name'];
-					}
-
-					echo "Привет";
-				?>
+				
 			</ul>
 		</div>
 	</div>
@@ -57,3 +46,9 @@
 			$('.header').css({'width':width,'height':height});
 	</script>
 </html>
+
+
+<?php 
+
+
+echo "sdflgnjdfkj" ?>
