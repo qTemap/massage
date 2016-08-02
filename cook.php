@@ -6,7 +6,7 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 	$dbas = substr( $url["path"], 1);
     define ('DBHOST', $url["host"]); 
-    define ('DBPORT', '3306'); 
+    //define ('DBPORT', '3306'); 
     define ('DBNAME', $dbas); // Имя базы
     define ('DBUSER', $url["user"]); // Пользователь
     define ('DBPASS', $url["pass"]); // Пароль
@@ -87,7 +87,7 @@ class DB {
     static $dbh; 
     public function __construct() { 
 		try { 
-			self :: $dbh = new PDO_('mysql:host='.DBHOST.';port='.DBPORT.';dbname='.DBNAME,DBUSER,DBPASS);
+			self :: $dbh = new PDO_('mysql:host='.DBHOST.';dbname='.DBNAME,DBUSER,DBPASS);
 			self :: $dbh -> exec('SET CHARACTER SET utf8'); 
 			self :: $dbh -> exec('SET NAMES utf8'); 
 		}	  

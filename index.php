@@ -49,21 +49,29 @@
 
 <?php 
 
-$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
+// $url=parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"],1);
- 	$conn = mysqli_connect($server, $username, $password);
-
-
-    mysqli_select_db($db,$conn);
+//     $server = $url["host"];
+//     $username = $url["user"];
+//     $password = $url["pass"];
+//     $db = substr($url["path"],1);
+//  	$conn = mysqli_connect($server, $username, $password);
 
 
+//     mysqli_select_db($db,$conn);
 
-	$result = mysql_query('SELECT * FROM massage ');
-	echo mysql_fetch_array($result);
+
+	require 'cook.php';
+
+	$result = DB :: $dbh->query('SELECT * FROM massage ');
+
+	while ($info = $result->fetch()) {
+		echo $info['id']."<br>";
+		echo $info['name']."<br>";
+	}
+
+// 	$result = mysql_query('SELECT * FROM massage ');
+// 	echo mysql_fetch_array($result);
 	// while($row = mysql_fetch_array($result)) {
 	// 	echo $row['id'];
 	// 	echo $row['name'];
